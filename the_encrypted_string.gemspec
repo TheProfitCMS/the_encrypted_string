@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["zykin-ilya@ya.ru"]
   spec.summary       = %q{encrypt/decrypt strings}
   spec.description   = %q{encrypt/decrypt strings for The!ProfitCMS}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/TheProfitCMS/the_encrypted_string"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,7 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'encryptor'
+  spec.add_dependency 'encryptor', '~> 0'
+
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake", '~> 0'
 end
