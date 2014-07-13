@@ -13,10 +13,12 @@ Encryptor.default_options.merge!(
 
 class String
   def to_the_encrypted
-    Base64.urlsafe_encode64(self.encrypt)
+    encrypted_str = Encryptor.encrypt(self)
+    Base64.urlsafe_encode64 encrypted_str
   end
 
   def to_the_decrypted
-    Base64.urlsafe_decode64(self).decrypt
+    encrypted_str = Base64.urlsafe_decode64(self)
+    Encryptor.decrypt encrypted_str
   end
 end
